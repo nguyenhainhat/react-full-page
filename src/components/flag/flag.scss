@@ -1,0 +1,54 @@
+@import "../../assets/scss/index";
+
+.flag {
+  padding-block: 8rem;
+  background: url("../../assets/img/mod-5/05-bg.png") no-repeat;
+  background-position: center center;
+  background-size: 100vw 100vh;
+  & > * {
+    color: $white;
+  }
+  &_container {
+    @include flex(baseline, space-between, column);
+    gap: 30px;
+    &_left {
+      @include scrollPage(-100%,0,0);
+      &_item {
+        margin-bottom: 2rem;
+        h3 {
+          @include fontSize($fz-base, 3vw, $fz-base + 12px);
+        }
+        a {
+          @include fontSize($fz-base - 4px, 3vw, $fz-base);
+          font-weight: 200;
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          &:hover {
+            color: $primary-color;
+            transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          }
+        }
+      }
+    }
+    &_right {
+      align-self: self-end;
+      margin-top: -10rem;
+      @include scrollPage(100%,0,0);
+      h2 {
+        @include fontSize($fz-mod-5 - 65px, 6vw, $fz-mod-5);
+        color: $fifth-color;
+        line-height: 1.1;
+        @include maxWidth(576px) {
+          @include fontSize(20px, 7vw, 40px);
+        }
+      }
+    }
+  }
+  @include minWidth(992px) {
+    &_container {
+      &_right {
+        align-self: center;
+      }
+    }
+  }
+ 
+}

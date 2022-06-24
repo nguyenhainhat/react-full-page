@@ -1,0 +1,66 @@
+@import "./variables";
+@import "./mixin";
+
+// space
+$space-count: 100;
+
+$space-item: (
+  mt: margin-top,
+  mr: margin-right,
+  ml: margin-left,
+  mb: margin-bottom,
+  pt: padding-top,
+  pr: padding-right,
+  pl: padding-left,
+  pb: padding-bottom,
+);
+
+@each $space-keys in map-keys($space-item) {
+  $space-values: map-get(
+    $map: $space-item,
+    $key: $space-keys,
+  );
+  @for $i from 1 to $space-count {
+    $value: ($i * 2);
+    .#{$space-keys}-#{$value} {
+      @include space($space-values, $value);
+    }
+  }
+}
+$item-box: 4;
+
+@for $var from 1 to 5 {
+  :is(.boxContent_item:nth-child(#{$var}), .history_content_item:nth-child(#{$var})) {
+    @include scrollPage(0, -50%, 0);
+    @if $var == 1 {
+      transition-delay: 0.6s;
+    }
+    @if $var == 2 {
+      transition-delay: 0.8s;
+    }
+    @if $var == 3 {
+      transition-delay: 1s;
+    }
+    @if $var == 4 {
+      transition-delay: 1.2s;
+    }
+  }
+  .active
+    :is(.boxContent_item:nth-child(#{$var}), .history_content_item:nth-child(#{$var})) {
+    @include scrollPage(0, 0);
+    @if $var == 1 {
+      transition-delay: 0.6s;
+    }
+    @if $var == 2 {
+      transition-delay: 0.8s;
+    }
+    @if $var == 3 {
+      transition-delay: 1s;
+    }
+    @if $var == 4 {
+      transition-delay: 1.2s;
+    }
+  }
+}
+
+// grid column

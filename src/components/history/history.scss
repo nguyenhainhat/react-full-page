@@ -1,0 +1,70 @@
+@import "../../assets/scss/index";
+
+.history {
+  background-color: $primary-color;
+  padding-block: 4rem 6rem;
+  height: 626px;
+  & > * {
+    color: $body-bg;
+  }
+  &_container {
+    @include flex(baseline, center, column);
+    gap: 30px;
+    h2 {
+      align-self: center;
+      @include fontSize($fz-mod-4 - 30px, 5vw, $fz-mod-4);
+      font-weight: 800;
+      @include scrollPage(0, -50%, 0);
+    }
+    h3 {
+      @include fontSize($fz-title - 10px, 3vw, $fz-title);
+      font-weight: 800;
+    }
+  }
+  &_content {
+    @include flex(center, center, row);
+    gap: 30px;
+    padding-inline: 0;
+    @include maxWidth(576px) {
+      gap: clamp(5px, 2vw, 15px);
+    }
+ 
+    &_item {
+      width: calc(100% / 3);
+    }
+    &_desc {
+      overflow-y: scroll;
+      height: 200px;
+      padding-right: 1rem;
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+      &_item {
+        margin-block: 1.8rem;
+        @include maxWidth(767px){
+          margin-block: 0.8rem;
+        }
+        span {
+            font-weight: normal;
+        }
+        p, span {
+          @include maxWidth(767px) {
+            @include fontSize(10px, 2vw, 12px);
+          }
+        }
+      }
+    }
+  }
+  @include minWidth(992px) {
+    padding-inline: clamp(4rem, 8vw, 12rem);
+  } 
+  @include minWidth(768px) {
+    &_content {
+      padding-inline: clamp(2rem, 2vw, 6rem);
+    }
+
+  }
+}

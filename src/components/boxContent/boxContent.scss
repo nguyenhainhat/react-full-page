@@ -1,0 +1,114 @@
+@import "../../assets/scss/index";
+
+.boxContent {
+  &_container {
+    @include flex(baseline, space-around, row);
+    flex-wrap: wrap;
+    gap: clamp(20px, 2vw, 40px);
+    margin-inline: -3rem;
+  }
+  &_item {
+    display: block;
+    background-color: #19065f;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    gap: clamp(10px, 1vw, 30px);
+    
+    @include maxWidth(767px) {
+      height: 80px;
+      overflow: hidden;
+      width: calc(100% / 2 - 8px);
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      &:hover {
+        height: 180px;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    &_heading {
+      padding-block: 40px 0;
+      padding-inline: 20px;
+      height: clamp(80px, 6vw, 120px);
+      @include maxWidth(767px) {
+        padding-top: 20px;
+      }
+      h2 {
+        @include fontSize($fz-title - 20px, 2vw, $fz-title);
+        font-weight: 600;
+        color: $fouth-color;
+        line-height: 1;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    &-img {
+      display: none;
+      width: 100%;
+      height: clamp(200px, 15vw, 279px);
+    }
+    &_info {
+      padding-inline: 20px;
+      padding-bottom: clamp(28px, 4vw, 70px);
+      span {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      p {
+        margin-top: 0.5rem;
+        @include fontSize(8px, 2vw, 10px);
+        color: $fouth-color;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    &:hover {
+      transform: scale(1.05);
+      background-color: $third-color;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      .boxContent_item {
+        &_span {
+          visibility: visible;
+          opacity: 1;
+          transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &_heading {
+          h2 {
+            color: $secondary-color;
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+          }
+        }
+        &_info {
+          p {
+            color: $secondary-color;
+            transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+          }
+        }
+      }
+    }
+  }
+  @include minWidth(1400px) {
+    &_item {
+      &_info {
+        p {
+          @include fontSize(12px, 1vw, 18px);
+        }
+      }
+    }
+  }
+  @include minWidth(1024px) {
+    &_container {
+      margin-inline: unset;
+      padding-inline: clamp(0px, 2vw, 66px);
+    }
+  }
+  @include minWidth(768px) {
+    &_container {
+      flex-wrap: nowrap;
+    }
+    &_item {
+      @include flex(baseline, center, column);
+      &-img,
+      span {
+        display: block;
+      }
+    }
+  }
+}

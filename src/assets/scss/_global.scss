@@ -1,0 +1,117 @@
+@import "./breakpoint";
+@import "./variables";
+@import "./mixin";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: $font-family;
+}
+
+html {
+  font-size: 100%;
+
+  @include minWidth($md) {
+    font-size: 80%;
+  }
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 600;
+  line-height: 1.5;
+  overflow-x: hidden;
+  background-color: $body-bg;
+  color: $primary-color;
+
+  @include minWidth($md) {
+    margin-bottom: 3rem;
+  }
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: unset;
+  cursor: pointer;
+}
+
+@media (hover: hover) {
+  a:hover {
+    color: $primary-color;
+  }
+}
+
+button,
+input {
+  outline: 0;
+  & > * {
+    cursor: pointer;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  &.fluid {
+    width: 100% !important;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.bg-mod-1 {
+  background: url("../../assets/img/mod-1/bg-object-1.png") no-repeat 0 210%,
+    url("../../assets/img/mod-1/bg-object-2.png") no-repeat 30% -125%,
+    url("../../assets/img/mod-1/bg-object-3.png") no-repeat 60% 70%,
+    url("../../assets/img/mod-1/bg-object-4.png") no-repeat 68% 100%,
+    url("../../assets/img/mod-1/bg-object-5.png") no-repeat 100% 170%;
+  background-size: 9%;
+  overflow-x: hidden;
+}
+
+.section {
+  height: 100vh;
+}
+
+#fp-nav {
+  z-index: 1 !important;
+  span {
+    background: $white !important;
+    right: 50% !important;
+    left: auto !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: unset !important;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+  }
+  .active span:not(.fp-sr-only) {
+    height: 8px !important;
+    width: 30px !important;
+    background: $primary-color !important;
+  }
+  @include maxWidth(576px) {
+    right: 0 !important;
+  }
+}
+.fp-watermark {
+  display: none !important;
+}

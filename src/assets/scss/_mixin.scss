@@ -1,0 +1,57 @@
+@import "./variables";
+
+@mixin flex(
+  $align-item: unset,
+  $justify-content: unset,
+  $flex-direction: unset
+) {
+  display: flex;
+  align-items: $align-item;
+  justify-content: $justify-content;
+  flex-direction: $flex-direction;
+}
+
+@mixin fontSize($min, $value, $max) {
+  font-size: clamp($min, $value, $max);
+}
+
+@mixin overlay {
+  background-color: rgba($color: #000000, $alpha: 0.6);
+}
+
+@mixin size($width, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin space($position, $px) {
+  #{$position}: #{$px}px;
+}
+
+@mixin minWidth($breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin maxWidth($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin hideVisible($opacity, $visibility) {
+  opacity: $opacity;
+  visibility: $visibility;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@mixin scrollPage($tranformX: 0, $tranformY: 0, $opacity: 1) {
+  opacity: $opacity;
+  transform: translate($tranformX, $tranformY);
+  transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@mixin delayItems($delay) {
+  transition-delay: #{$delay};
+}

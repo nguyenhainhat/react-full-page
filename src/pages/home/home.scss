@@ -1,0 +1,12 @@
+@import "../../assets/scss/index";
+
+.active {
+  :is(.header_logo, .header_nav-link, .header_nav_container, .intro_container
+      h1, .intro_container a, .slider_img, .history_container
+      h2, .flag_container_left, .flag_container_right) {
+    @include scrollPage();
+  }
+  .slider_container_heading {
+    @include scrollPage(0, -50%);
+  }
+}

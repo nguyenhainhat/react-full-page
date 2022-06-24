@@ -1,0 +1,41 @@
+@import "../../assets/scss/index";
+.slider {
+  position: relative;
+  &_container {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    &_heading {
+      position: absolute;
+      top: 40%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      height: 770px;
+      h1 {
+        @include fontSize($fz-mod-2 - 60px, 16vw, $fz-mod-2);
+        font-weight: 600;
+        line-height: 0.96;
+      }
+    }
+   
+  }
+  &_img {
+    text-align: center;
+    width: 26%;
+    margin: auto;
+    overflow: hidden;
+    transform: translateY(20%);
+    @include maxWidth(767px) {
+      width: 80vw;
+    }
+    img {
+      object-fit: contain;
+      vertical-align: middle;
+    }
+  }
+  :is(&_img,&_container_heading) {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+}

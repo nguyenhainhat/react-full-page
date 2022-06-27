@@ -16,13 +16,14 @@ html {
   @include minWidth($md) {
     font-size: 80%;
   }
+
 }
 
 body {
   font-family: $font-family;
   font-weight: 600;
   line-height: 1.5;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   background-color: $body-bg;
   color: $primary-color;
 
@@ -86,6 +87,13 @@ img {
     url("../../assets/img/mod-1/bg-object-5.png") no-repeat 100% 170%;
   background-size: 9%;
   overflow-x: hidden;
+  justify-content: start;
+  @include maxWidth(1023px) {
+    gap: 3vw;
+  }
+  @include maxWidth(576px) {
+    gap: 10vw;
+  }
 }
 
 .section {
@@ -106,7 +114,8 @@ img {
   .active span:not(.fp-sr-only) {
     height: 8px !important;
     width: 30px !important;
-    background: $primary-color !important;
+    background: $secondary-color !important;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
   }
   @include maxWidth(576px) {
     right: 0 !important;
@@ -114,4 +123,13 @@ img {
 }
 .fp-watermark {
   display: none !important;
+}
+
+.fp-viewing-3 {
+  #fp-nav {
+    span {
+      background: $black !important;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) !important;
+    }
+  }
 }

@@ -21,13 +21,10 @@
   }
   &_img {
     text-align: center;
-    width: 26%;
+    width: 50vh;
     margin: auto;
     overflow: hidden;
-    transform: translateY(20%);
-    @include maxWidth(767px) {
-      width: 80vw;
-    }
+    transform: translateY(22vh) !important;
     img {
       object-fit: contain;
       vertical-align: middle;

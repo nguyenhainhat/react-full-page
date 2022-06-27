@@ -1,4 +1,4 @@
-import "./history.scss"
+import "./history.scss";
 
 const historyContent = [
   {
@@ -56,20 +56,22 @@ const History: React.FC = () => {
       <div className="container">
         <div className="history_container">
           <h2>History</h2>
-          <div className="history_content">
-            {historyContent.map((item, index) => (
-              <div className="history_content_item">
-                <h3>{item.year}</h3>
-                <div className="history_content_desc">
-                  {item.content.map((itemContent, index) => (
-                    <div className="history_content_desc_item">
-                      <p>{itemContent}</p>
-                      <span>MOTION</span>
-                    </div>
-                  ))}
+          <div className="history_scroll">
+            <div className="history_content">
+              {historyContent.map((item, index) => (
+                <div className="history_content_item">
+                  <h3>{item.year}</h3>
+                  <div className="history_content_desc">
+                    {item.content.map((itemContent, index) => (
+                      <div className="history_content_desc_item">
+                        <p>{itemContent}</p>
+                        <span>MOTION</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

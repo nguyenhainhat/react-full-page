@@ -2,18 +2,18 @@
 
 .header {
   padding-top: 0;
-  height: 105vh !important;
   &_container {
     @include flex(baseline, space-between);
     gap: 40px;
     padding-top: 15px;
   }
   &_nav {
-    @include flex(center, space-between);
+    @include flex(flex-start, center);
     gap: 40px;
 
     &_container {
-      position: relative;
+      position: fixed;
+      right: 6vw;
       z-index: 3;
 
       &_icon {
@@ -66,21 +66,33 @@
         }
       }
     }
+
+    &-link {
+      width: 54vw;
+      @include fontSize(10px, 2vw, 20px);
+      @include minWidth(768px) {
+        width: 30vw;
+      }
+    }
   }
 
   &_menu {
     @include flex(baseline, center, column);
-    gap: 80px;
+    gap: 10vw;
     position: fixed;
     background: black;
     height: 100vh;
-    width: 600px;
+    width: 100vw;
     z-index: 2;
     top: 0;
     right: 0;
     padding-inline: 3rem;
     transform: translateX(100%);
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    @include minWidth(768px) {
+      width: 50vw;
+      gap: 80px;
+    }
     & > * {
       color: #4d4d4d;
     }
@@ -109,8 +121,9 @@
       }
     }
   }
+
   .activated {
-    color: $primary-color;
+    color: $secondary-color;
   }
   .actived-link {
     color: $white;
@@ -136,7 +149,7 @@
   }
 
   // tranform
-  :is(&_logo, &_nav-link, &_nav_container) {
+  :is(&_logo, &_nav-link) {
     opacity: 0;
     transform: translateY(-200%);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);

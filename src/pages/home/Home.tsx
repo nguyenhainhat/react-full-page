@@ -14,7 +14,7 @@ const Home: React.FC = () => {
       //fullpage options
       //fullpage options
       licenseKey={"abc"}
-      scrollingSpeed={2000} /* Options here */
+      scrollingSpeed={1000} /* Options here */
       scrollHorizontally={true} /* Because we are using the extension */
       scrollHorizontallyKey={"def"}
       scrollBar= {true}

@@ -10,17 +10,20 @@
   &_item {
     display: block;
     background-color: #19065f;
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(1);
+    transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
     gap: clamp(10px, 1vw, 30px);
-    
+    cursor: pointer;
+
     @include maxWidth(767px) {
       height: 80px;
       overflow: hidden;
       width: calc(100% / 2 - 8px);
-      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
       &:hover {
         height: 180px;
-        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        overflow: hidden;
+        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
     &_heading {
@@ -60,9 +63,9 @@
       }
     }
     &:hover {
-      transform: scale(1.05);
+      transform: scale(1.05) !important;
       background-color: $third-color;
-      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      transition: all 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
       .boxContent_item {
         &_span {
           visibility: visible;

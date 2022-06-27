@@ -4,7 +4,7 @@
   padding-block: 8rem;
   background: url("../../assets/img/mod-5/05-bg.png") no-repeat;
   background-position: center center;
-  background-size: 100vw 100vh;
+  background-size: 100% 100vh;
   & > * {
     color: $white;
   }
@@ -12,7 +12,7 @@
     @include flex(baseline, space-between, column);
     gap: 30px;
     &_left {
-      @include scrollPage(-100%,0,0);
+      @include scrollPage(-100%, 0, 0);
       &_item {
         margin-bottom: 2rem;
         h3 {
@@ -30,15 +30,18 @@
       }
     }
     &_right {
-      align-self: self-end;
-      margin-top: -10rem;
-      @include scrollPage(100%,0,0);
+      align-self: center;
+      @include scrollPage(100%, 0, 0);
+      @include minWidth(1024px) {
+        margin-top: -10rem;
+        
+      }
       h2 {
-        @include fontSize($fz-mod-5 - 65px, 6vw, $fz-mod-5);
+        @include fontSize($fz-mod-5 - 65px, 4vw, $fz-mod-5);
         color: $fifth-color;
         line-height: 1.1;
-        @include maxWidth(576px) {
-          @include fontSize(20px, 7vw, 40px);
+        @include maxWidth(1023px) {
+          @include fontSize(30px, 3vw, 60px);
         }
       }
     }
@@ -50,5 +53,4 @@
       }
     }
   }
- 
 }

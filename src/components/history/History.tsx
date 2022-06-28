@@ -1,8 +1,11 @@
-import "./history.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css/pagination";
+
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/pagination";
+import "./history.scss";
+
+// import required modules
 import { Pagination } from "swiper";
 
 const historyContent = [
@@ -78,6 +81,8 @@ const History: React.FC = () => {
                 spaceBetween={20}
                 slidesPerView={1}
                 grabCursor={true}
+                pagination={true}
+                modules={[Pagination]}
                 breakpoints={{
                   // when window width is >= 768px
                   576: {
@@ -85,9 +90,11 @@ const History: React.FC = () => {
                   },
                   768: {
                     slidesPerView: 3,
+                    pagination: false,
                   },
                   1024: {
                     slidesPerView: 4,
+                    pagination: false,
                   },
                 }}
               >

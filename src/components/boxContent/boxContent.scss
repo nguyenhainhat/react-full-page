@@ -29,7 +29,7 @@
     }
     &_wrap {
       @include maxWidth(767px) {
-        @include flex(start, space-around);
+        @include flex(start, start);
       }
     }
     &_heading {
@@ -38,7 +38,7 @@
       height: clamp(80px, 6vw, 120px);
       @include maxWidth(767px) {
         padding-top: 20px;
-        width: 20vw;
+        width: 80%;
       }
       h2 {
         @include fontSize($fz-title - 20px, 2vw, $fz-title);

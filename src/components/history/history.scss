@@ -22,46 +22,45 @@
       font-weight: 800;
     }
   }
-  // &_scroll {
-  //   width: 100%;
-  //   overflow-x: scroll;
-  //   &::-webkit-scrollbar {
-  //     width: 2px;
-  //     height: 6px;
-  //   }
-  //   &::-webkit-scrollbar-thumb {
-  //     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
-  //   }
-  // }
+
   .swiper-wrapper {
-    width: 575px;
+    width: 80vw;
     padding-inline: 20px;
   }
 
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: 1024px) {
     .swiper-wrapper {
-      width: 767px;
+      width: 86vw;
     }
   }
 
-  @media screen and (min-width: 768px) {
-    .swiper-wrapper {
-      width: 1023px;
-    }
-  }
-  
-  @media screen and (min-width: 1024px) {
-    .swiper-wrapper {
-      min-width: 1920px;
-    }
-  }
-  
   .swiper-slide {
-    // width: 88vw !important;
-    // @include minWidth(1024px) {
-    //   width: 22vw !important;
-    // }
+    // width: 41vw !important;
+    @include minWidth(768px) {
+      width: 26vw !important;
+    }
+    @include minWidth(1024px) {
+      width: 21vw !important;
+    }
   }
+
+  .swiper-pagination {
+    display: none;
+  }
+
+  @include maxWidth(767px){
+    .swiper-pagination {
+      display: block;
+      position: relative !important;
+      bottom: 0 !important;
+    }
+  
+    .swiper-pagination-bullet-active {
+      background: $body-bg !important;
+    }
+  }
+
+
   &_content {
     display: block;
     padding-inline: 0;
@@ -69,16 +68,23 @@
 
     &_item {
       display: inline-block;
+      width: 90%;
     }
     &_desc {
-      overflow-y: scroll;
       height: 200px;
-      padding-right: 1rem;
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-      &::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      padding-right: 0.6rem;
+      overflow: hidden;
+      &:hover {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        cursor: pointer;
+        &::-webkit-scrollbar {
+          width: 4px;
+          height: 4px;
+        }
+        &::-webkit-scrollbar-thumb {
+          box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
       }
       &_item {
         margin-block: 1.8rem;

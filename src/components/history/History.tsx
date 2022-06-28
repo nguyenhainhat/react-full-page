@@ -1,4 +1,9 @@
 import "./history.scss";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css/pagination";
+// Import Swiper styles
+import "swiper/css";
+import { Pagination } from "swiper";
 
 const historyContent = [
   {
@@ -48,6 +53,16 @@ const historyContent = [
       "Hyundai Veloster Viral Video Production",
     ],
   },
+  {
+    year: "2017",
+    content: [
+      "Establishment of 'LOOC Academy,' a business-focused educational institution",
+      "Samsung QLED TV Welcome Video Production",
+      "G Dragon 'Untitle' M/V Production",
+      "TaeYang X Lexus TVC and M/V Producton",
+      "Hyundai Veloster Viral Video Production",
+    ],
+  },
 ];
 
 const History: React.FC = () => {
@@ -58,19 +73,40 @@ const History: React.FC = () => {
           <h2>History</h2>
           <div className="history_scroll">
             <div className="history_content">
-              {historyContent.map((item, index) => (
-                <div className="history_content_item">
-                  <h3>{item.year}</h3>
-                  <div className="history_content_desc">
-                    {item.content.map((itemContent, index) => (
-                      <div className="history_content_desc_item">
-                        <p>{itemContent}</p>
-                        <span>MOTION</span>
+              <Swiper
+                className="mySwiper"
+                spaceBetween={20}
+                slidesPerView={1}
+                grabCursor={true}
+                breakpoints={{
+                  // when window width is >= 768px
+                  576: {
+                    slidesPerView: 2,
+                  },
+                  768: {
+                    slidesPerView: 3,
+                  },
+                  1024: {
+                    slidesPerView: 4,
+                  },
+                }}
+              >
+                {historyContent.map((item, index) => (
+                  <SwiperSlide>
+                    <div className="history_content_item">
+                      <h3>{item.year}</h3>
+                      <div className="history_content_desc">
+                        {item.content.map((itemContent, index) => (
+                          <div className="history_content_desc_item">
+                            <p>{itemContent}</p>
+                            <span>MOTION</span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

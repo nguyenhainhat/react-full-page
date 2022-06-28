@@ -10,6 +10,7 @@
   &_container {
     @include flex(baseline, center, column);
     gap: 30px;
+    overflow: hidden;
     h2 {
       align-self: center;
       @include fontSize($fz-mod-4 - 30px, 5vw, $fz-mod-4);
@@ -21,28 +22,53 @@
       font-weight: 800;
     }
   }
-  &_scroll {
-    @include maxWidth(767px) {
-      overflow-x: scroll;
-      width: 100%;
-      &::-webkit-scrollbar {
-        width: 6px;
-      }
-      &::-webkit-scrollbar-thumb {
-        box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.6);
-      }
+  // &_scroll {
+  //   width: 100%;
+  //   overflow-x: scroll;
+  //   &::-webkit-scrollbar {
+  //     width: 2px;
+  //     height: 6px;
+  //   }
+  //   &::-webkit-scrollbar-thumb {
+  //     box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.6);
+  //   }
+  // }
+  .swiper-wrapper {
+    width: 575px;
+    padding-inline: 20px;
+  }
+
+  @media screen and (min-width: 576px) {
+    .swiper-wrapper {
+      width: 767px;
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    .swiper-wrapper {
+      width: 1023px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .swiper-wrapper {
+      min-width: 1920px;
+    }
+  }
+  
+  .swiper-slide {
+    // width: 88vw !important;
+    // @include minWidth(1024px) {
+    //   width: 22vw !important;
+    // }
   }
   &_content {
     display: block;
-    width: calc(50vw * 4);
     padding-inline: 0;
-    @include maxWidth(576px) {
-      gap: clamp(5px, 2vw, 15px);
-    }
+    // width: calc(30vw * 8);
 
     &_item {
-      width: calc(100% / 3);
+      display: inline-block;
     }
     &_desc {
       overflow-y: scroll;
@@ -68,26 +94,6 @@
             @include fontSize(10px, 2vw, 12px);
           }
         }
-      }
-    }
-  }
-  @include minWidth(992px) {
-    padding-inline: clamp(4rem, 8vw, 12rem);
-  }
-  @include minWidth(768px) {
-    &_content {
-      padding-inline: clamp(2rem, 2vw, 6rem);
-      @include flex(center, center, row);
-      gap: 30px;
-      width: auto;
-    }
-  }
-  @include maxWidth(767px) {
-    &_content {
-      &_item {
-        display: inline-block;
-        width: 50vw;
-        padding-inline: 1rem;
       }
     }
   }

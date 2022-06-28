@@ -9,6 +9,7 @@ import img3Light from "../../assets/img/mod-3/img3-light.png";
 import img4 from "../../assets/img/mod-3/img4.png";
 import img4Light from "../../assets/img/mod-3/img4-light.png";
 import { useRef, useState } from "react";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 const boxContentItems = [
   {
@@ -61,10 +62,21 @@ const BoxContent: React.FC = () => {
                 onMouseEnter={handleHoverEnter}
                 onMouseLeave={handleHoverLeave}
               >
-                <div className="boxContent_item_heading">
-                  {item?.title.split(" ").map((items) => (
-                    <h2>{items}</h2>
-                  ))}
+                <div className="boxContent_item_wrap">
+                  <div className="boxContent_item_heading">
+                    {item?.title.split(" ").map((items) => (
+                      <h2>{items}</h2>
+                    ))}
+                  </div>
+                  <div
+                    className={`${
+                      hoverImg && index === numImg
+                        ? "boxContent_item_arrow arrow-active"
+                        : "boxContent_item_arrow"
+                    }`}
+                  >
+                    <AiOutlineArrowDown />
+                  </div>
                 </div>
                 <img
                   className="boxContent_item-img"

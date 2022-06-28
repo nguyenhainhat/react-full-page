@@ -8,6 +8,7 @@
     margin-inline: -3rem;
   }
   &_item {
+    position: relative;
     display: block;
     background-color: #19065f;
     transform: scale(1);
@@ -21,9 +22,14 @@
       width: calc(100% / 2 - 8px);
       transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
       &:hover {
-        height: 180px;
+        height: 200px;
         overflow: hidden;
         transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+    }
+    &_wrap {
+      @include maxWidth(767px) {
+        @include flex(start, space-around);
       }
     }
     &_heading {
@@ -32,6 +38,7 @@
       height: clamp(80px, 6vw, 120px);
       @include maxWidth(767px) {
         padding-top: 20px;
+        width: 20vw;
       }
       h2 {
         @include fontSize($fz-title - 20px, 2vw, $fz-title);
@@ -45,6 +52,17 @@
       display: none;
       width: 100%;
       height: clamp(200px, 15vw, 279px);
+    }
+    &_arrow {
+      // position: absolute;
+      display: block;
+      align-self: center;
+      transform: rotate(0deg) scale(1.2);
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .arrow-active {
+      transform: rotate(180deg) scale(1.2);
+      transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     }
     &_info {
       padding-inline: 20px;
@@ -112,6 +130,12 @@
       span {
         display: block;
       }
+      &_arrow {
+        display: none;
+      }
+      .arrow-active {
+        display: none;
+       }
     }
   }
 }

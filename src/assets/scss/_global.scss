@@ -87,7 +87,7 @@ img {
     url("../../assets/img/mod-1/bg-object-5.png") no-repeat 100% 170%;
   background-size: 9%;
   overflow-x: hidden;
-  justify-content: start;
+  justify-content: start !important;
   @include maxWidth(1023px) {
     gap: 3vw;
   }

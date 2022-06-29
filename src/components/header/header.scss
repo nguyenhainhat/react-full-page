@@ -19,13 +19,16 @@
       &_icon {
         padding: 2rem;
         cursor: pointer;
+        @include minWidth(768px) {
+        padding: 2rem 2.5rem;
+        }
         &::before {
           content: "";
           position: absolute;
-          left: 26px;
+          left: 30px;
           display: block;
           width: 4px;
-          height: 60px;
+          height: 50px;
           background-color: #fff;
           transform: translate(0, -10%) rotate(-90deg); //45 - 135, -40 - -35
           transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -33,10 +36,10 @@
         &::after {
           content: "";
           position: absolute;
-          left: 26px;
+          left: 30px;
           display: block;
           width: 4px;
-          height: 60px;
+          height: 50px;
           background-color: #fff;
           transform: translate(0, -30%) rotate(-90deg);
           transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -60,7 +63,7 @@
           font-weight: 500;
           font-stretch: normal;
           font-style: normal;
-          line-height: 6.4;
+          line-height: 5.4;
           color: $white;
           cursor: pointer;
         }

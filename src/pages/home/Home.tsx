@@ -23,7 +23,6 @@ const Home: React.FC = () => {
       navigation
       animateAnchor= {true}
       render={({ state, fullpageApi }) => {
-        console.log(state, fullpageApi)
         return (
           <div className="wrap">
             <Header />

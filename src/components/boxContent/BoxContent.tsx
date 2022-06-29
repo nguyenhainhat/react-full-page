@@ -10,6 +10,7 @@ import img4 from "../../assets/img/mod-3/img4.png";
 import img4Light from "../../assets/img/mod-3/img4-light.png";
 import { useRef, useState } from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
+import { useTranslation } from "react-i18next";
 
 const boxContentItems = [
   {
@@ -41,6 +42,7 @@ const boxContentItems = [
 const BoxContent: React.FC = () => {
   const [hoverImg, setHoverImg] = useState(false);
   const [numImg, setNumImg] = useState(Number);
+  const { t, i18n } = useTranslation();
 
   return (
     <section className="section boxContent">
@@ -87,7 +89,10 @@ const BoxContent: React.FC = () => {
                 />
                 <div className="boxContent_item_info">
                   <span className="boxContent_item_span">{item?.title}</span>
-                  <p>{item?.desc}</p>
+                  <p>
+                    {t(`Box content ${index}`)}
+                    {/* {item?.desc} */}
+                  </p>
                 </div>
               </div>
             );

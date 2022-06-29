@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/img/mod-1/logo-icon.png";
 import Intro from "../Intro/Intro";
 import "./header.scss";
+import { useTranslation } from "react-i18next";
 
 const headerNavLink = [
   { title: "Home", link: "/" },
@@ -18,6 +19,7 @@ const headerNavLinkInfo = [
 const Header: React.FC = () => {
   const [menu, setMenu] = useState(false);
   const [language, setLanguage] = useState(false);
+  const { t, i18n } = useTranslation();
 
   const navLinkClass = ({ isActive }: any) => {
     return isActive ? "header_nav-link activated" : "header_nav-link";
@@ -32,10 +34,12 @@ const Header: React.FC = () => {
     setMenu(!menu);
   };
   const handleLanguageKR = () => {
+    i18n.changeLanguage("kr");
     setLanguage(true);
   };
   const handleLanguageEN = () => {
     setLanguage(false);
+    i18n.changeLanguage("en");
   };
 
   return (
@@ -89,9 +93,10 @@ const Header: React.FC = () => {
             <div className="header_menu_line">-</div>
             <div className="header_menu_info">
               <span>
-                {language
+                {/* {language
                   ? "서울특별시 강남구 도산대로 8길 17-10 이리스빌딩 1F"
-                  : "17-10, Dosan-daero 8-gil, Gangnam-gu, Republic of Korea 1F"}
+                  : "17-10, Dosan-daero 8-gil, Gangnam-gu, Republic of Korea 1F"} */}
+                {t("Header menu")}
                 <br /> Tel 02.543.4983 / Fax 02.6280.4079
               </span>
               <NavLink

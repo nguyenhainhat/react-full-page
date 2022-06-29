@@ -7,6 +7,7 @@ import "./history.scss";
 
 // import required modules
 import { Pagination } from "swiper";
+import { useTranslation } from "react-i18next";
 
 const historyContent = [
   {
@@ -69,6 +70,8 @@ const historyContent = [
 ];
 
 const History: React.FC = () => {
+  const { t, i18n } = useTranslation();
+
   return (
     <section className="section history">
       <div className="container">
@@ -98,14 +101,15 @@ const History: React.FC = () => {
                   },
                 }}
               >
-                {historyContent.map((item, index) => (
+                {historyContent.map((item, indexBox) => (
                   <SwiperSlide>
                     <div className="history_content_item">
                       <h3>{item.year}</h3>
                       <div className="history_content_desc">
                         {item.content.map((itemContent, index) => (
                           <div className="history_content_desc_item">
-                            <p>{itemContent}</p>
+                            {/* <p>{itemContent}</p> */}
+                            <p>{t(`History ${indexBox} ${index}`)}</p>
                             <span>MOTION</span>
                           </div>
                         ))}

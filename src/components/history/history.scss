@@ -28,19 +28,19 @@
     padding-inline: 20px;
   }
 
-  @media screen and (min-width: 1024px) {
-    .swiper-wrapper {
-      width: 86vw;
-    }
-  }
+  // @media screen and (min-width: 1024px) {
+  //   .swiper-wrapper {
+  //     width: 80vw;
+  //   }
+  // }
 
   .swiper-slide {
     // width: 41vw !important;
     @include minWidth(768px) {
-      width: 26vw !important;
+      width: 27vw !important;
     }
     @include minWidth(1024px) {
-      width: 21vw !important;
+      width: 20vw !important;
     }
   }
 
@@ -48,18 +48,17 @@
     display: none;
   }
 
-  @include maxWidth(767px){
+  @include maxWidth(767px) {
     .swiper-pagination {
       display: block;
       position: relative !important;
       bottom: 0 !important;
     }
-  
+
     .swiper-pagination-bullet-active {
       background: $body-bg !important;
     }
   }
-
 
   &_content {
     display: block;
@@ -72,16 +71,14 @@
     }
     &_desc {
       height: 200px;
-      padding-right: 0.6rem;
-      overflow: hidden;
+      padding-right: 2rem;
+      overflow-y: scroll;
+      cursor: pointer;
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+      }
       &:hover {
-        overflow-x: hidden;
-        overflow-y: scroll;
-        cursor: pointer;
-        &::-webkit-scrollbar {
-          width: 4px;
-          height: 4px;
-        }
         &::-webkit-scrollbar-thumb {
           box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
         }
@@ -93,6 +90,9 @@
         }
         span {
           font-weight: normal;
+        }
+        p {
+          font-weight: 500;
         }
         p,
         span {

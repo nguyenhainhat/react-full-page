@@ -5,7 +5,7 @@
     @include flex(baseline, space-around, row);
     flex-wrap: wrap;
     gap: clamp(20px, 2vw, 40px);
-    margin-inline: -3rem;
+    margin-inline: -4rem;
   }
   &_item {
     position: relative;
@@ -75,7 +75,7 @@
       }
       p {
         margin-top: 0.5rem;
-        @include fontSize(8px, 2vw, 10px);
+        @include fontSize(9px, 2vw, 10px);
         color: $fouth-color;
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
       }

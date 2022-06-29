@@ -13,15 +13,10 @@ const Home: React.FC = () => {
     <ReactFullpage
       //fullpage options
       //fullpage options
-      licenseKey={"abc"}
-      scrollingSpeed={1000} /* Options here */
-      scrollHorizontally={true} /* Because we are using the extension */
-      scrollHorizontallyKey={"def"}
-      scrollBar= {true}
-      scrollOverflow= {true}
-      easingcss3= {"ease"}
-      navigation
-      animateAnchor= {true}
+      licenseKey = {'YOUR_KEY_HERE'}
+      scrollingSpeed = {1000} /* Options here */
+      navigation={true}
+      normalScrollElements={".history_scroll"}
       render={({ state, fullpageApi }) => {
         return (
           <div className="wrap">

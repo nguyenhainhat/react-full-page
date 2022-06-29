@@ -3,10 +3,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/free-mode";
+import "swiper/css/scrollbar";
 import "./history.scss";
 
 // import required modules
-import { Pagination } from "swiper";
+import { Pagination, FreeMode, Scrollbar, Mousewheel } from "swiper";
 import { useTranslation } from "react-i18next";
 
 const historyContent = [
@@ -106,13 +108,25 @@ const History: React.FC = () => {
                     <div className="history_content_item">
                       <h3>{item.year}</h3>
                       <div className="history_content_desc">
-                        {item.content.map((itemContent, index) => (
-                          <div className="history_content_desc_item">
-                            {/* <p>{itemContent}</p> */}
-                            <p>{t(`History ${indexBox} ${index}`)}</p>
-                            <span>MOTION</span>
-                          </div>
-                        ))}
+                        <Swiper
+                          direction={"vertical"}
+                          slidesPerView={4}
+                          freeMode={true}
+                          scrollbar={true}
+                          mousewheel={true}
+                          modules={[FreeMode, Scrollbar, Mousewheel]}
+                          className="mySwiper"
+                        >
+                          {item.content.map((itemContent, index) => (
+                            <SwiperSlide>
+                              <div className="history_content_desc_item">
+                                {/* <p>{itemContent}</p> */}
+                                <p>{t(`History ${indexBox} ${index}`)}</p>
+                                <span>MOTION</span>
+                              </div>
+                            </SwiperSlide>
+                          ))}
+                        </Swiper>
                       </div>
                     </div>
                   </SwiperSlide>
@@ -125,4 +139,5 @@ const History: React.FC = () => {
     </section>
   );
 };
+
 export default History;

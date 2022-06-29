@@ -23,74 +23,39 @@
     }
   }
 
-  .swiper-wrapper {
-    width: 80vw;
-    padding-inline: 20px;
-  }
-
-  // @media screen and (min-width: 1024px) {
-  //   .swiper-wrapper {
-  //     width: 80vw;
-  //   }
-  // }
-
-  .swiper-slide {
-    // width: 41vw !important;
-    @include minWidth(768px) {
-      width: 27vw !important;
-    }
-    @include minWidth(1024px) {
-      width: 20vw !important;
-    }
-  }
-
-  .swiper-pagination {
-    display: none;
-  }
-
-  @include maxWidth(767px) {
-    .swiper-pagination {
-      display: block;
-      position: relative !important;
-      bottom: 0 !important;
-    }
-
-    .swiper-pagination-bullet-active {
-      background: $body-bg !important;
-    }
-  }
-
   &_content {
     display: block;
     padding-inline: 0;
     // width: calc(30vw * 8);
+    .swiper-wrapper {
+      width: 80vw;
+    }
+
+    .swiper-slide {
+      // width: 41vw !important;
+      @include minWidth(768px) {
+        width: 27vw !important;
+      }
+      @include minWidth(1024px) {
+        width: 20vw !important;
+      }
+    }
+
+    .swiper-pagination {
+      display: none;
+    }
 
     &_item {
       display: inline-block;
       width: 90%;
     }
+
     &_desc {
       position: relative;
       height: 200px;
-      padding-right: 2rem;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      cursor: pointer;
-      &::-webkit-scrollbar {
-        width: 4px;
-        height: 4px;
-      }
-      &:hover {
-        &::-webkit-scrollbar-track
-        {
-          -webkit-box-shadow: inset 0 0 6px rgba(75, 71, 71, 0.1);
-          border-radius: 10px;
-          background-color: $white;
-        }
-        &::-webkit-scrollbar-thumb {
-          box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
-        }
-      }
+      @include flex(center, center);
+      overflow: hidden;
+    
 
       &_item {
         margin-block: 1.8rem;
@@ -109,6 +74,38 @@
             @include fontSize(10px, 2vw, 12px);
           }
         }
+      }
+      .swiper-vertical {
+        height: 200px;
+        padding-right: 2rem;
+      }
+      .swiper-wrapper {
+        width: auto !important;
+      }
+      .swiper-slide {
+        width: auto !important;
+        height: 80px !important;
+      }
+
+      &:hover {
+        .swiper-scrollbar {
+          display: block;
+        }
+      }
+      .swiper-scrollbar {
+        display: none;
+      }
+    }
+
+    @include maxWidth(767px) {
+      .swiper-pagination {
+        display: block;
+        position: relative !important;
+        bottom: 0 !important;
+      }
+
+      .swiper-pagination-bullet-active {
+        background: $body-bg !important;
       }
     }
   }

@@ -26,20 +26,6 @@
   &_content {
     display: block;
     padding-inline: 0;
-    // width: calc(30vw * 8);
-    .swiper-wrapper {
-      width: 80vw;
-    }
-
-    .swiper-slide {
-      // width: 41vw !important;
-      @include minWidth(768px) {
-        width: 27vw !important;
-      }
-      @include minWidth(1024px) {
-        width: 20vw !important;
-      }
-    }
 
     .swiper-pagination {
       display: none;
@@ -48,25 +34,37 @@
     &_item {
       display: inline-block;
       width: 90%;
+      @include maxWidth(375px) {
+        min-width: 100%;
+        text-align: center;
+      }
     }
 
     &_desc {
       position: relative;
-      height: 200px;
+      height: 250px;
       @include flex(center, center);
       overflow: hidden;
-    
+
+      @include minWidth(2000px) {
+        height: 300px;
+      }
 
       &_item {
-        margin-block: 1.8rem;
         @include maxWidth(767px) {
           margin-block: 0.8rem;
         }
         span {
           font-weight: normal;
+          @include minWidth(2000px) {
+            @include fontSize(1rem, 4vw, 1.3rem);
+          }
         }
         p {
           font-weight: 500;
+          @include minWidth(2000px) {
+            @include fontSize(1.2rem, 2vw, 1.6rem);
+          }
         }
         p,
         span {
@@ -76,24 +74,38 @@
         }
       }
       .swiper-vertical {
-        height: 200px;
-        padding-right: 2rem;
+        height: 250px;
+        padding-right: 0.8rem;
+        width: 100%;
+        @include minWidth(1600px) {
+          padding-right: 2rem;
+        }
+        @include minWidth(2000px) {
+          height: 300px;
+        }
+        @include maxWidth(767px) {
+          padding-right: 0;
+        }
       }
       .swiper-wrapper {
-        width: auto !important;
+        // @include minWidth(2000px) {
+        //   gap: 20px;
+        // }
       }
       .swiper-slide {
-        width: auto !important;
-        height: 80px !important;
+        // width: auto !important;
+        // height: 80px !important;
       }
 
       &:hover {
         .swiper-scrollbar {
-          display: block;
+          opacity: 1;
+          transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
       }
       .swiper-scrollbar {
-        display: none;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
     }
 
@@ -108,5 +120,10 @@
         background: $body-bg !important;
       }
     }
+  }
+
+  &_scroll {
+    width: 100%;
+    align-self: center;
   }
 }

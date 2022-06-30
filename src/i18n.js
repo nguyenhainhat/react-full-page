@@ -22,35 +22,28 @@ const resources = {
       "History 0 2": "Hyndai Card TVC and Viral Imaging",
       "History 0 3": "Samsung Grande Dryer AI Digital Video Production",
       "History 0 4": "Samsung Card Collaboration Digital Video Production",
-      "History 0 5": "JTBC Value-Mental-Posture Spot Video Production",
-      "History 0 6": "SKT Quantum + Galaxy A TVC and Digital Imaging",
-      "History 0 7": "Hyundai Oilbank, a symbol, animation production",
       // 1
       "History 1 0": "ma:nyo TVC Production",
       "History 1 1": "ISA KNOX TVC Production",
       "History 1 2": "Samsung Galaxy FAN Curator Video Production",
       "History 1 3": "Cha-pi CHINA TVC Production",
       "History 1 4": "Samsung Galaxy Screensaver Video Production",
-      "History 1 5": "Samsung Galaxy Celeb Live Video Production",
-      "History 1 6": "Type in Search Word: WWW tvn Drama Title Production",
-      "History 1 7": "Samsung Galaxy S10 TVC Production",
       //   2
       "History 2 0": "LG Display Shocase Video Production",
       "History 2 1": "SSG Campaign TVC 제작",
       "History 2 2": "Lineage 2M BI Video Production",
       "History 2 3": "Netflix TV Show 'Kingdom' Title 제작",
       "History 2 4": "Samsung Mobility Shocase Video Production",
-      "History 2 5": "SKT / KT / U+ Mobile Operators TVC Production",
       // 3
       "History 3 0":
-        "Establishment of 'LOOC Academy,' a business-focused educational institution",
+        "Establishment of 'LOOC Academy,' a business-focused",
       "History 3 1": "Samsung QLED TV Welcome Video Production",
       "History 3 2": "G Dragon 'Untitle' M/V Production",
       "History 3 3": "TaeYang X Lexus TVC and M/V Producton",
       "History 3 4": "Hyundai Veloster Viral Video Production",
       //   4
       "History 4 0":
-        "Establishment of 'LOOC Academy,' a business-focused educational institution",
+        "Establishment of 'LOOC Academy,' a business-focused",
       "History 4 1": "Samsung QLED TV Welcome Video Production",
       "History 4 2": "G Dragon 'Untitle' M/V Production",
       "History 4 3": "TaeYang X Lexus TVC and M/V Producton",
@@ -73,25 +66,20 @@ const resources = {
       "History 0 2": "현대 카드 TVC 및 바이럴 영상 제작",
       "History 0 3": "삼성 그랑데 건조기 AI 디지털영상제작",
       "History 0 4": "삼성카드 콜라보레이션 디지털 영상제작",
-      "History 0 5": "JTBC 가치-정신-자세 스팟 영상 제작",
-      "History 0 6": "SKT 퀀텀 + 갤럭시 A TVC 및 디지털 영상제작",
-      "History 0 7": "현대오일뱅크 심볼 애니메이션 제작",
+    
       //   1
       "History 1 0": "마녀공장 TVC 제작",
       "History 1 1": "이자녹스 TVC 제작",
       "History 1 2": "Samsung Galaxy FAN Curator 영상 제작",
       "History 1 3": "Cha-pi CHINA TVC 제작",
       "History 1 4": "Samsung Galaxy Screensaver 영상 제작",
-      "History 1 5": "Samsung Galaxy Celeb Live 영상 제작",
-      "History 1 6": "SKT 퀀텀 + 갤럭시 A TVC 및 디지털 영상제작",
-      "History 1 7": "WWW '검색어를 입력하세요' tvn 드라마 Title 제작",
+    
       //   2
       "History 2 0": "LG Display Shocase 영상 제작",
       "History 2 1": "SSG 켐페일 TVC 제작",
       "History 2 2": "Lineage 2M BI 영상 제작",
       "History 2 3": "Netflix TV Show 'Kingdom' Title 제작",
       "History 2 4": "Samsung Mobility Showcase 영상 제작",
-      "History 2 5": "SKT / KT / U+ 통신사 TVC 제작",
       // 3
       "History 3 0": "실무중심의 교육기관 '루크 아카데미' 설립",
       "History 3 1": "삼성 QLED TV 웰컴 비디오 제작",

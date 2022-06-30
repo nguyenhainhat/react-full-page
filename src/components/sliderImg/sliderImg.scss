@@ -28,6 +28,9 @@
     img {
       object-fit: contain;
       vertical-align: middle;
+      @include maxWidth(768px) {
+        width: 70%;
+      }
     }
   }
   :is(&_img,&_container_heading) {

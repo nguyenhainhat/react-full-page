@@ -20,7 +20,7 @@
         padding: 2rem;
         cursor: pointer;
         @include minWidth(768px) {
-        padding: 2rem 2.5rem;
+          padding: 2rem 2.5rem;
         }
         &::before {
           content: "";
@@ -77,6 +77,13 @@
         width: 30vw;
       }
     }
+
+    &_fixed {
+      position: fixed;
+      right: 4vw;
+      top: 5%;
+      z-index: 99;
+    }
   }
 
   &_menu {
@@ -96,6 +103,9 @@
       width: 50vw;
       gap: 80px;
     }
+    @include minWidth(2000px) {
+      gap: 4vw;
+    }
     & > * {
       color: #4d4d4d;
     }
@@ -109,9 +119,22 @@
       @include flex(baseline, center, column);
       & > * {
         @include fontSize(30px, 2vw, $fz-title);
+        @include minWidth(2000px) {
+          @include fontSize($fz-title, 4vw, 70px);
+        }
       }
     }
     &_info {
+      & > span {
+        @include minWidth(2000px) {
+          @include fontSize(1.1vw, 1vw, 2vw);
+        }
+      }
+      & > a {
+        @include minWidth(2000px) {
+          @include fontSize(0.5vw, 2vw, 0.8vw);
+        }
+      }
       @include flex(baseline, center, column);
       gap: 20px;
       span {
@@ -121,19 +144,27 @@
       &_container {
         @include flex(baseline, center, column);
         gap: 5px;
+        & > span {
+          @include minWidth(2000px) {
+            @include fontSize(1.1vw, 1vw, 2vw);
+          }
+        }
+        & > a {
+          @include minWidth(2000px) {
+            @include fontSize(0.5vw, 2vw, 0.8vw);
+          }
+        }
       }
     }
   }
 
-  .activated {
-    color: $secondary-color;
-  }
-  .actived-link {
-    color: $white;
-  }
-  .active-menu {
-    transform: translateX(0%);
-    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  &_logo {
+    @include minWidth(2000px) {
+      width: 8vw;
+      img {
+        width: 100%;
+      }
+    }
   }
 
   @include minWidth(376px) {
@@ -157,4 +188,18 @@
     transform: translateY(-200%);
     transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
+}
+
+.active-menu {
+  transform: translateX(0%);
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.activated {
+  color: $secondary-color !important;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.actived-link {
+  color: $white;
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

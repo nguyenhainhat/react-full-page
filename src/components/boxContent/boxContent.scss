@@ -16,7 +16,7 @@
     gap: clamp(10px, 1vw, 30px);
     cursor: pointer;
 
-    @include maxWidth(767px) {
+    @include maxWidth(991px) {
       height: 80px;
       overflow: hidden;
       width: calc(100% / 2 - 8px);
@@ -28,7 +28,7 @@
       }
     }
     &_wrap {
-      @include maxWidth(767px) {
+      @include maxWidth(991px) {
         @include flex(start, start);
       }
     }
@@ -36,7 +36,7 @@
       padding-block: 40px 0;
       padding-inline: 20px;
       height: clamp(80px, 6vw, 120px);
-      @include maxWidth(767px) {
+      @include maxWidth(991px) {
         padding-top: 20px;
         width: 80%;
       }
@@ -46,12 +46,13 @@
         color: $fouth-color;
         line-height: 1;
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        text-align: left;
       }
     }
     &-img {
       display: none;
       width: 100%;
-      height: clamp(200px, 15vw, 279px);
+      height: clamp(200px, 15vw, 350px);
     }
     &_arrow {
       // position: absolute;
@@ -105,11 +106,12 @@
       }
     }
   }
+  
   @include minWidth(1400px) {
     &_item {
       &_info {
         p {
-          @include fontSize(12px, 1vw, 18px);
+          @include fontSize(8px, 4vw, 12px);
         }
       }
     }
@@ -120,7 +122,7 @@
       padding-inline: clamp(0px, 2vw, 66px);
     }
   }
-  @include minWidth(768px) {
+  @include minWidth(992px) {
     &_container {
       flex-wrap: nowrap;
     }
@@ -136,6 +138,27 @@
       .arrow-active {
         display: none;
        }
+    }
+  }
+  @include minWidth(2000px) {
+    &_item {
+      &_info {
+        p {
+          @include fontSize(8px, 4vw, 16px);
+        }
+      }
+      span {
+        @include fontSize(0.8rem, 2vw, 2rem);
+      }
+    }
+  }
+  @include minWidth(2600px) {
+    &_item {
+      &_info {
+        p {
+          @include fontSize(12px, 4vw, 22px);
+        }
+      }
     }
   }
 }

@@ -2,7 +2,7 @@
 .intro {
   padding-bottom: 0px;
   &_container {
-    padding-top: 3rem;
+    padding-top: 2rem;
     h1 {
       @include fontSize(50px, 9vw, $fz-mod-1);
       font-weight: 600;
@@ -12,6 +12,10 @@
       @include fontSize($fz-base - 2px, 2vw, $fz-base);
       font-weight: 500;
       line-height: 3;
+      @include minWidth(2000px) {
+      @include fontSize($fz-base - 4px, 4vw, $fz-base + 4px);
+
+      }
     }
     :is(h1,a) {
       opacity: 0;

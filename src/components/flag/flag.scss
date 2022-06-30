@@ -16,10 +16,10 @@
       &_item {
         margin-bottom: 2rem;
         h3 {
-          @include fontSize($fz-base, 3vw, $fz-base + 12px);
+          @include fontSize($fz-base, 3vw, $fz-base + 16px);
         }
         a {
-          @include fontSize($fz-base - 4px, 3vw, $fz-base);
+          @include fontSize($fz-base - 4px, 3vw, $fz-base + 2px);
           font-weight: 200;
           transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
           &:hover {

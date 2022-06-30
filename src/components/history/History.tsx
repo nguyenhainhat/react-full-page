@@ -20,9 +20,6 @@ const historyContent = [
       "Hyndai Card TVC and Viral Imaging",
       "Samsung Grande Dryer AI Digital Video Production",
       "Samsung Card Collaboration Digital Video Production",
-      "JTBC Value-Mental-Posture Spot Video Production",
-      "SKT Quantum + Galaxy A TVC and Digital Imaging",
-      "Hyundai Oilbank, a symbol, animation production",
     ],
   },
   {
@@ -33,9 +30,6 @@ const historyContent = [
       "Samsung Galaxy FAN Curator Video Production",
       "Cha-pi CHINA TVC Production",
       "Samsung Galaxy Screensaver Video Production",
-      "Samsung Galaxy Celeb Live Video Production",
-      "Type in Search Word: WWW tvn Drama Title Production",
-      "Samsung Galaxy S10 TVC Production",
     ],
   },
   {
@@ -46,7 +40,6 @@ const historyContent = [
       "Lineage 2M BI Video Production",
       "Netflix TV Show 'Kingdom' Title 제작",
       "Samsung Mobility Shocase Video Production",
-      "SKT / KT / U+ Mobile Operators TVC Production",
     ],
   },
   {
@@ -83,17 +76,19 @@ const History: React.FC = () => {
             <div className="history_content">
               <Swiper
                 className="mySwiper"
-                spaceBetween={20}
                 slidesPerView={1}
                 grabCursor={true}
-                pagination={true}
+                pagination={{
+                  clickable: true,
+                }}
+                centeredSlides={true}
+                roundLengths={true}
                 modules={[Pagination]}
                 breakpoints={{
                   // when window width is >= 768px
-                  576: {
-                    slidesPerView: 2,
-                  },
+
                   768: {
+                    centeredSlides: false,
                     slidesPerView: 3,
                     pagination: false,
                   },
@@ -111,16 +106,26 @@ const History: React.FC = () => {
                         <Swiper
                           direction={"vertical"}
                           slidesPerView={4}
-                          freeMode={true}
+                          spaceBetween={10}
                           scrollbar={true}
                           mousewheel={true}
-                          modules={[FreeMode, Scrollbar, Mousewheel]}
+                          modules={[Scrollbar, Mousewheel]}
                           className="mySwiper"
+                          breakpoints={{
+                            // when window width is >= 768px
+                            768: {
+                              spaceBetween: 20,
+                              centeredSlides: false,
+                            },
+                            1600: {
+                              slidesPerView: 4,
+                              pagination: false,
+                            },
+                          }}
                         >
                           {item.content.map((itemContent, index) => (
                             <SwiperSlide>
                               <div className="history_content_desc_item">
-                                {/* <p>{itemContent}</p> */}
                                 <p>{t(`History ${indexBox} ${index}`)}</p>
                                 <span>MOTION</span>
                               </div>

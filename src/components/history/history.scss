@@ -42,7 +42,7 @@
 
     &_desc {
       position: relative;
-      height: 250px;
+      height: 200px;
       @include flex(center, center);
       overflow: hidden;
 
@@ -74,7 +74,7 @@
         }
       }
       .swiper-vertical {
-        height: 250px;
+        height: 200px;
         padding-right: 0.8rem;
         width: 100%;
         @include minWidth(1600px) {

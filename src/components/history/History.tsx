@@ -81,8 +81,6 @@ const History: React.FC = () => {
                 pagination={{
                   clickable: true,
                 }}
-                centeredSlides={true}
-                roundLengths={true}
                 modules={[Pagination]}
                 breakpoints={{
                   // when window width is >= 768px
@@ -105,8 +103,8 @@ const History: React.FC = () => {
                       <div className="history_content_desc">
                         <Swiper
                           direction={"vertical"}
-                          slidesPerView={4}
-                          spaceBetween={10}
+                          slidesPerView={3}
+                          spaceBetween={0}
                           scrollbar={true}
                           mousewheel={true}
                           modules={[Scrollbar, Mousewheel]}
@@ -115,6 +113,7 @@ const History: React.FC = () => {
                             // when window width is >= 768px
                             768: {
                               spaceBetween: 20,
+                              slidesPerView: 3,
                               centeredSlides: false,
                             },
                             1600: {

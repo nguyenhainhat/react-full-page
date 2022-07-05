@@ -26,10 +26,6 @@ body {
   overflow-x: hidden !important;
   background-color: $body-bg;
   color: $primary-color;
-
-  @include minWidth($md) {
-    margin-bottom: 3rem;
-  }
 }
 
 a {

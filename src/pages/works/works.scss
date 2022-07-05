@@ -1,0 +1,249 @@
+@import "../../assets/scss/index";
+
+.work {
+  &_container {
+    padding-top: 3rem;
+    @include maxWidth(767px) {
+      padding-top: 1rem;
+    }
+  }
+
+  &_tab {
+    margin-top: 1.2rem;
+    @include flex(baseline, start, row);
+    gap: 1.4rem;
+    @include maxWidth(767px) {
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    form, select {
+      width: 100%;
+    }
+  }
+
+  &_grid {
+    margin-top: 1.2rem;
+    padding-right: 4vw;
+    overflow-y: scroll;
+    height: 66vh;
+    &_wrap {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1.4rem;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px $primary-color;
+      border-radius: 2px;
+      background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar {
+      width: 2px;
+      background-color: #f5f5f5;
+    }
+
+    &:hover::-webkit-scrollbar-thumb {
+      border-radius: 6px;
+      -webkit-box-shadow: inset 0 0 6px $black;
+      background-color: $black;
+    }
+    &_item {
+      cursor: pointer;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      height: 180px;
+      @include flex(baseline, space-between, column);
+      padding: 2rem;
+      transform: translateY(10px);
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      position: relative;
+      z-index: 2;
+      @include maxWidth(767px) {
+        padding: 1rem;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba($color: #000000, $alpha: 0.6);
+        z-index: -1;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      h3 {
+        transform: translateY(-50%);
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+          transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      p {
+        transform: translateY(50%);
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+          transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      &:hover {
+        transform: translateY(0px);
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        h3 {
+          transform: translateY(0%);
+          opacity: 1;
+          transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        p {
+          opacity: 1;
+          transform: translateY(0%);
+          transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1),
+            transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &::after {
+          opacity: 1;
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+      }
+    }
+  }
+
+  &_modal {
+    &_video {
+      width: 100%;
+      height: 85vh;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @include maxWidth(767px) {
+        height: 40vh;
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+      }
+      iframe {
+        box-shadow: 0px 0px 8px white;
+        border-radius: 6px;
+      }
+    }
+    &_overView {
+      margin-top: 1rem;
+      p {
+        margin-top: 2rem;
+        @include fontSize(2rem, 2vw, 3rem);
+        @include maxWidth(767px) {
+          margin-top: 0;
+          @include fontSize(1rem, 2vw, 2rem);
+        }
+      }
+    }
+    &_contact {
+      margin-top: 6rem;
+      text-align: center;
+      background: $body-bg;
+      width: 130px;
+      padding: 1rem;
+      margin-inline: auto;
+      border-radius: 6px;
+      @include maxWidth(767px) {
+        margin-top: 3rem;
+      }
+    }
+  }
+
+  &_bottom {
+    margin-block: 0.8rem;
+    @include flex(baseline, start);
+    gap: 1rem;
+    @include maxWidth(767px) {
+      & > * {
+        @include fontSize(0.6rem, 2vw, 1.2rem);
+      }
+    }
+  }
+  .active {
+    &:hover {
+      color: $white !important;
+      transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+  }
+  .actived {
+    color: $white !important;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  .scroll_none {
+    overflow-y: hidden;
+  }
+
+  @include minWidth(420px) {
+    &_grid {
+      // height: 60vh;
+      &_wrap {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+
+  @include minWidth(768px) {
+    &_grid {
+      // height: 66vh;
+    }
+  }
+
+  @include minWidth(992px) {
+    &_container {
+      padding-inline: 3vw;
+    }
+    &_grid {
+      &_wrap {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  @include minWidth(1400px) {
+    &_grid {
+      padding-right: 2vw;
+      &_wrap {
+        gap: 1vw;
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  @include minWidth(1921px) {
+    &_grid {
+      &_item {
+        height: 198px;
+      }
+    }
+  }
+
+  @include minWidth(2200px) {
+    &_container {
+      h1 {
+        @include fontSize(2rem, 1.5vw, 3rem);
+      }
+    }
+    &_tab {
+      a {
+        @include fontSize(1.2rem, 1.5vw, 1.6rem);
+      }
+    }
+    &_grid {
+      &_item {
+        height: 10vw;
+      }
+    }
+    &_modal {
+      &_overView {
+        h3 {
+          @include fontSize(1rem, 1vw, 3rem);
+        }
+      }
+      &_contact {
+        @include fontSize(1rem, 1vw, 1.5rem);
+        width: 7vw;
+        padding: 2rem 1vw;
+      }
+    }
+  }
+}
